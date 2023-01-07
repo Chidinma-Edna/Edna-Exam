@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
         <div>
             <h1>Oops! You seem to be lost.</h1>
             <p>Click link below to go back</p>
-            <Link to='/'>Home</Link>
+            <Link to='/' className="hom">Home</Link>
         </div>
     )
 }

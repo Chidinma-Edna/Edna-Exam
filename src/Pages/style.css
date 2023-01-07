@@ -2,70 +2,117 @@
   display: flexbox;
   font-family: sans-serif;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .App {
   text-align: center;
-  font-size:4rem;
-  }
+  font-size: 4rem;
+}
+body {
+  background-color:#E5E5E5;
+  color:#000;
   
-  button{
-    border: 3px solid cbc0d3;
-  font-size:100%;
-  border-radius: 50px;
+}
+h2 {
+  color: #000;
+}
+.cout{
+  color:#000;
+}
+button {
+  border: 2px solid cbc0d3;
+  font-size: 100%;
+  border-radius: 1000px;
   font-weight: 60px;
- width: 300px;
+  width: 100px;
+  height: 70px;
   margin: 4%;
-  padding: 25px;
-  background-color:#8d99ae;
-  
-  }
-  button:hover {
-  font-size:3.1rem;
-  
-  }
+  padding: 15px;
+  display: inline-block;
+  background-color: plum;
+}
+button:hover {
+  font-size: 1.1rem;
+}
+input {
+  border: 3px solid cbc0d3;
+  font-size: 100%;
+  border-radius: 15px;
+  font-weight: 60px;
+  width: 100px;
+  margin: 4%;
+  padding: 15px;
+  background-color: plum;
+}
 
-  h1{
-    text-align: center;
-  }
+input:hover {
+  font-size: 1.9rem;
+}
+h1 {
+  text-align: center;
+}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color:#000814;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover {
-    background-color: #8d99ae;
-  }
-  <
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: plum;
+}
+p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+}
+li {
+  float: left;
+}
 
-  
-  ul li {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1px 25px;
-    background-color: transparent;
-    border: 2px solid black;
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #8d99ae;
+}
+< li {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1px 25px;
+  background-color: plum;
+  border: 2px solid black;
+}
+
+a:hover {
+  background-color: rgb(12, 0, 66);
+  color: rgb(255, 255, 255);
+}
+.home {
+  color: #fff;
+}
+.home1 {
+  color: #fff;
+}
+
+p{
+  color: #000;
+}
+.hom{
+  border:2px solid black;
+  width:60%;
+  padding:10px;
+  background:plum;
+  color:black;
+  border-radius:5px
   }
-  
-  a:hover {
-    background-color: rgb(12, 0, 66);
-    color: rgb(255, 255, 255);
+  .hom:hover{
+  background-color:black;
+  color:white;
   }

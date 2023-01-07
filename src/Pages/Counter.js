@@ -1,28 +1,60 @@
 import React from "react";
 import "./style.css";
-import  {useState} from 'react';
+import { useState } from "react";
 
-function Counter() {
-let [countNum, setCount] = useState(0);
-let increaseValaue = () => {
-setCount((countNum += 1)); //increases the count by 1
-};
-let decreaseValue = () => {
+export default function Counter() {
+  const [count, setCount] = useState(0);
+  const [quantity, setQuantity] = useState(0);
 
-setCount((countNum -= 1)); 
+  const handleSubtractQuantity = () => {
+    setCount(count - 1);
+    if (quantity) setCount(count - parseInt(quantity, 10));
+  };
 
-};// decreases the count by 1
-let resetValue = () => {
-setCount(0); //resets the count to 0
-};
-return (
-<div>
-<h1> {countNum} </h1>
-<button onClick={increaseValaue}>+</button> 
-<button onClick={decreaseValue}>-</button>
+  const handleAddQuantity = () => {
+    setCount(count + 1);
+    if (quantity) setCount(count + parseInt(quantity, 10));
+  };
 
-<button onClick={resetValue}>Reset</button>
-</div>
-)
+  const handleOnChange = (e) => {
+    setQuantity(e.target.value);
+  };
+
+  const handleResetCounter = () => {
+    setCount(0);
+    setQuantity(0);
+  };
+
+  return (
+    <div id={"content-wrapper"} className={"flex-cont"}>
+      <h1>Counter</h1>
+      <div id={"counter-wrapper"} className={"wrapper"}>
+        <div className={"count"}>
+          <p className="cout">{count}</p>
+        </div>
+
+        <button className={"btn"} onClick={handleSubtractQuantity}>
+          -
+        </button>
+        <button className={"btn-b"} onClick={handleAddQuantity}>
+          +
+        </button>
+
+        <div>
+          <div className={"flexbtn"}>
+          <h2>input value</h2>
+            <input
+              type="text"
+              value={quantity}
+              onChange={handleOnChange}
+              className={"val"}
+            />
+          </div>
+        </div>
+        <button id={"counter-reset"} onClick={handleResetCounter}>
+          Reset
+        </button>
+      </div>
+    </div>
+  );
 }
-export default Counter;
