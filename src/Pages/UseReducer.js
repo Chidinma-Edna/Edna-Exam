@@ -1,43 +1,73 @@
-import React from 'react'
+import React from "react";
+import "./style.css";
+import { useReducer } from "react";
 
-const startingState = { count: 0 }
-const reducerCounter = (state, action) => {
+const initialState = { count: 0, quantity: 0 };
+
+const reducer = (state, action) => {
   switch (action.type) {
-    case 'increment':
-      return { count: state.count + 1 }
-    case 'decrement':
-      return { count: state.count !== 0 ? state.count - 1 : (state.count = 0) }
-    default:
-      throw new Error('Error occured in counter')
+    case "addOne":
+      return {
+        ...state,
+        count: state.count + 1 + parseInt(state.quantity, 10)
+      };
+    case "subtractOne":
+      return { ...state, count: state.count - 1 - parseInt(state.quantity, 0) };
+
+    case "setQuantity":
+      return { ...state, quantity: action.payload };
+    case "resetCounter":
+      return initialState;
+    //default:
+     // throw new Error();
   }
-}
-export default function ReactCounter() {
-  const [state, dispatch] = React.useReducer(reducerCounter, startingState)
+};
+
+export default function UseReducer() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const handleSubtractOne = () => {
+    dispatch({ type: "subtractOne" });
+  };
+
+  const handleAddOne = () => {
+    dispatch({ type: "addOne" });
+  };
+
+  const handleOnChange = (e) => {
+    dispatch({ type: "setQuantity", payload: e.target.value });
+  };
+
+  const handleResetCounter = () => {
+    dispatch({ type: "resetCounter" });
+  };
+
   return (
-    <div>
-      <h2 className="mb-4"> useReducer Counter </h2>
-      <div>
-        <h2>{state.count}</h2>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={() => {
-            dispatch({ type: 'decrement' })
-          }}
-        >
-          decrement
+    <div id={"content-wrapper"} className={"container"}>
+      <h1>usereducer</h1>
+      <div id={"wrapper"} className={"col"}>
+        <div className={"col-1"}>
+          <p className="cout">{state.count}</p>
+          <div className={"col-2"}>
+            <button onClick={handleSubtractOne}>-1</button>
+            <button onClick={handleAddOne}>+1</button>
+          </div>
+        </div>
+        <div>
+          <div className={"input-col"}>
+            <h2>input value</h2>
+            <input
+              type="text"
+              value={state.quantity}
+              onChange={handleOnChange}
+              className={"input"}
+            />
+          </div>
+        </div>
+        <button id={"counter-reset"} onClick={handleResetCounter}>
+          Reset
         </button>
-        <button
-          type="button"
-          className="btn btn-danger ms-2"
-          onClick={() => {
-            dispatch({ type: 'increment' })
-          }}
-        >
-          increment
-        </button>
-        
       </div>
     </div>
-  )
+  );
 }

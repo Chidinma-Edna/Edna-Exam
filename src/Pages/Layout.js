@@ -18,7 +18,7 @@ const Layout = () => {
             <Link to="/UseReducer">UseReducer</Link>
           </li>
           <li>
-            <Link to="/Error">ErrorBoundary</Link>
+            <Link to="/ErrorBoundary">ErrorBoundary</Link>
           </li>
           <li>
             <Link to="/Page404">404</Link>

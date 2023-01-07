@@ -1,25 +1,26 @@
 import React from "react";
+class ErrorBoundary extends React.Component {
+  state = {
+    counter: 0,
+  };
 
-
-
-export default class ErrorBoundary extends React.Component {
-  state = { hasError: false };
-
-  static getDerivedStateFromError(error) {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    logError(error, errorInfo);
-  }
+  handleClick = () => {
+    this.setState({
+      counter: this.state.counter + 2,
+    });
+  };
 
   render() {
-    return this.state.hasError ? (
-      <div className="ErrorBoundary text-center">
-        <h3>Sorry there was a problem loading this page</h3>
+    if (this.state.counter === 4) {
+      
+      throw  Error(' error.');
+      
+    }
+    return (
+      <div>
+        <h1>{this.state.counter}</h1>
+        <button onClick={this.handleClick}>click</button>
       </div>
-    ) : (
-      this.props.children
     );
   }
 }
