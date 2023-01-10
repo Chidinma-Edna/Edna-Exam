@@ -18,8 +18,7 @@ const reducer = (state, action) => {
       return { ...state, quantity: action.payload };
     case "resetCounter":
       return initialState;
-    //default:
-     // throw new Error();
+    
   }
 };
 

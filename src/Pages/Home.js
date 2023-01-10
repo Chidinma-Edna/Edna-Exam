@@ -26,7 +26,8 @@ export default function Home() {
   };
 
   return (
-    <div id={"content-wrapper"} className={"flex-cont"}>
+    <div id={"content-wrapper"} 
+    className={"flex-cont"}>
       <h1>Counter</h1>
       <div id={"counter-wrapper"} className={"wrapper"}>
         <div className={"count"}>
