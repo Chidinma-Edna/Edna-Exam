@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet-async";
 
 export default function App() {
   return (
+    
+    <ErrorBoundary>
     <div>
       <Helmet>
         <title>counter | app</title>
@@ -11,9 +13,10 @@ export default function App() {
         name="Description"
         content="Edna's counter app using react js"
         />;
-      <Counter />
-      <Home />
+        <App />
       </Helmet>
     </div>
+   </ErrorBoundary>
+   
   );
 }

@@ -3,24 +3,24 @@ import "./style.css";
 import { useState } from "react";
 
 export default function Counter() {
-  const [count, setCount] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  let [count, setCount] = useState(0);
+  let [quantity, setQuantity] = useState(0);
 
-  const handleSubtractQuantity = () => {
+  let handleSubtractQuantity = () => {
     setCount(count - 1);
     if (quantity) setCount(count - parseInt(quantity, 10));
   };
 
-  const handleAddQuantity = () => {
+  let handleAddQuantity = () => {
     setCount(count + 1);
     if (quantity) setCount(count + parseInt(quantity, 10));
   };
 
-  const handleOnChange = (e) => {
+  let handleOnChange = (e) => {
     setQuantity(e.target.value);
   };
 
-  const handleResetCounter = () => {
+  let handleResetCounter = () => {
     setCount(0);
     setQuantity(0);
   };

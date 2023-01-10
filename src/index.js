@@ -8,8 +8,11 @@ import Counter from "./Pages/Counter";
 import ErrorBoundary from "./Pages/ErrorBoundary";
 import Page404 from "./Pages/Page404";
 import UseReducer from "./Pages/UseReducer";
+
+
  function App() {
   return (
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -21,6 +24,7 @@ import UseReducer from "./Pages/UseReducer";
         </Route>
       </Routes>
     </BrowserRouter>
+  
   );
 }
 
