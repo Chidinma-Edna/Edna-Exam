@@ -9,7 +9,7 @@ export default function App() {
         <title>counter | app</title>
         <Meta 
         name="counter"
-        content="creating counter using react js"
+        content="Edna's counter app using react js"
         />;
       <Counter />
       <Home />
