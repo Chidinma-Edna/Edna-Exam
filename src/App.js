@@ -8,7 +8,7 @@ export default function App() {
       <Helmet>
         <title>counter | app</title>
         <Meta 
-        name="counter"
+        name="Description"
         content="Edna's counter app using react js"
         />;
       <Counter />
